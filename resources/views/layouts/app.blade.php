@@ -2,24 +2,44 @@
 <html>
 
 <head>
-    <title>School Management System</title>
+
+    <title>School Management</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
 
 <body>
 
-    <div class="container mt-5">
+    @include('layouts.navbar')
 
-        @if(session('success'))
+    <div class="container-fluid">
 
-            <div class="alert alert-success">
-                {{ session('success') }}
+        <div class="row">
+
+            <div class="col-md-2 bg-light vh-100 p-3">
+
+                @include('layouts.sidebar')
+
             </div>
 
-        @endif
+            <div class="col-md-10 p-4">
 
-        @yield('content')
+                @if(session('success'))
+
+                    <div class="alert alert-success">
+
+                        {{ session('success') }}
+
+                    </div>
+
+                @endif
+
+                @yield('content')
+
+            </div>
+
+        </div>
 
     </div>
 

@@ -13,4 +13,13 @@ class ClassRoom extends Model
         'code',
         'description',
     ];
+
+    public function sections()
+    {
+        return $this->hasMany(Section::class, 'class_room_id');
+    }
+    public function subjects()
+    {
+        return $this->hasMany(Subject::class, 'class_room_id');
+    }
 }
