@@ -19,4 +19,9 @@
         Subjects
     </a>
 
+    <a href="{{ route('teachers.index') }}"
+        class="list-group-item {{ request()->routeIs('teachers.*') ? 'active' : '' }}">
+        Teachers
+    </a>
+
 </div>
