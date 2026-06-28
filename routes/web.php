@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\SectionController;
 use App\Http\Controllers\Admin\SubjectController;
 use App\Http\Controllers\Admin\TeacherController;
+use App\Http\Controllers\Admin\StudentController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -17,3 +18,4 @@ Route::get('/', [DashboardController::class, 'index'])
 Route::resource('sections', SectionController::class);
 Route::resource('subjects', SubjectController::class);
 Route::resource('teachers', TeacherController::class);
+Route::resource('students', StudentController::class);
