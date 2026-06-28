@@ -4,27 +4,28 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Student extends Model
+class Attendance extends Model
 {
     protected $fillable = [
 
         'student_id',
+
         'class_room_id',
+
         'section_id',
-        'roll',
-        'name',
-        'email',
-        'phone',
-        'gender',
-        'date_of_birth',
-        'father_name',
-        'mother_name',
-        'guardian_phone',
-        'address',
-        'admission_date',
-        'photo',
+
+        'attendance_date',
+
         'status',
+
+        'remarks',
+
     ];
+
+    public function student()
+    {
+        return $this->belongsTo(Student::class);
+    }
 
     public function classRoom()
     {
@@ -34,9 +35,5 @@ class Student extends Model
     public function section()
     {
         return $this->belongsTo(Section::class);
-    }
-    public function attendances()
-    {
-        return $this->hasMany(Attendance::class);
     }
 }
